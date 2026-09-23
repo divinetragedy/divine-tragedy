@@ -3,12 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DIVINE TRAGEDY</title>
+
+  <title>DIVINE TRAGEDY — Narrative Designer. Writer. Tragedian.</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #080808;
+      color: #e8e1d5;
+      font-family: 'Manrope', sans-serif;
+      min-height: 100vh;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #8d877e;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(64px, 12vw, 150px);
+      font-weight: 600;
+      line-height: 0.85;
+      letter-spacing: 0.03em;
+      color: #eee8dc;
+    }
+
+    .line {
+      width: 80px;
+      height: 1px;
+      background: #8d877e;
+      margin: 35px auto;
+    }
+
+    .subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(24px, 4vw, 42px);
+      font-style: italic;
+      color: #b8b0a4;
+    }
+
+    .manifesto {
+      margin-top: 50px;
+      max-width: 620px;
+      color: #77716a;
+      font-size: 14px;
+      line-height: 1.8;
+      letter-spacing: 0.03em;
+    }
+
+    .enter {
+      margin-top: 55px;
+      padding: 14px 30px;
+      border: 1px solid #6f6961;
+      color: #e8e1d5;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: 0.3s ease;
+    }
+
+    .enter:hover {
+      background: #e8e1d5;
+      color: #080808;
+    }
+  </style>
 </head>
+
 <body>
 
-  <h1>DIVINE TRAGEDY</h1>
-  <p>Narrative Designer. Writer. Tragedian.</p>
+  <main class="hero">
+
+    <div class="eyebrow">
+      Divine Tragedy
+    </div>
+
+    <h1>TRAGEDY</h1>
+
+    <div class="line"></div>
+
+    <div class="subtitle">
+      Narrative Designer. Writer. Tragedian.
+    </div>
+
+    <p class="manifesto">
+      Истории, в которых структура имеет значение.<br>
+      Персонажи имеют цену. А последствия — память.
+    </p>
+
+    <a href="#" class="enter">
+      Enter the tragedy
+    </a>
+
+  </main>
 
 </body>
 </html>
