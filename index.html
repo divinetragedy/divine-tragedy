@@ -88,10 +88,40 @@
       background: #e8e1d5;
       color: #080808;
     }
+  .main-nav {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 28px;
+  z-index: 10;
+}
+
+.main-nav a {
+  color: #8d877e;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: #e8e1d5;
+}
   </style>
 </head>
 
 <body>
+
+  <nav class="main-nav">
+    <a href="projects.html">Проекты</a>
+    <a href="methodology.html">Методология</a>
+    <a href="tools.html">Инструменты</a>
+    <a href="content.html">Контент</a>
+    <a href="about.html">Обо мне</a>
+  </nav>
 
   <main class="hero">
 
