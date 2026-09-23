@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Инструменты — DIVINE TRAGEDY</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #080808;
+      color: #e8e1d5;
+      font-family: 'Manrope', sans-serif;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 70px 25px 100px;
+    }
+
+    nav {
+      margin-bottom: 100px;
+    }
+
+    nav a {
+      color: #8d877e;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      color: #e8e1d5;
+    }
+
+    .eyebrow {
+      color: #8d877e;
+      font-size: 12px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(55px, 9vw, 100px);
+      line-height: 0.9;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    .intro {
+      max-width: 700px;
+      color: #aaa39a;
+      font-size: 15px;
+      line-height: 1.9;
+      margin-bottom: 70px;
+    }
+
+    .tools {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .tool {
+      border: 1px solid #292929;
+      padding: 40px;
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      transition: 0.3s ease;
+    }
+
+    .tool:hover {
+      border-color: #6f6961;
+      transform: translateY(-4px);
+    }
+
+    .number {
+      color: #6f6961;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      margin-bottom: 45px;
+    }
+
+    .tool h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .tool p {
+      color: #aaa39a;
+      font-size: 14px;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .tool a {
+      margin-top: auto;
+      color: #e8e1d5;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .tool a:hover {
+      color: #8d877e;
+    }
+
+    @media (max-width: 700px) {
+      .tools {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <nav>
+      <a href="index.html">← DIVINE TRAGEDY</a>
+    </nav>
+
+    <div class="eyebrow">Инструменты</div>
+
+    <h1>Оружие<br>драматурга.</h1>
+
+    <p class="intro">
+      Инструменты, которые превращают работу с историей
+      из шаманства в процесс, который можно повторять,
+      проверять и совершенствовать.
+    </p>
+
+    <section class="tools">
+
+      <article class="tool">
+        <div class="number">01</div>
+
+        <h2>Тренажёр драматурга</h2>
+
+        <p>
+          Генератор сюжетных параметров для практики.
+          Жанр, сеттинг и структура случайным образом
+          превращаются в новое драматургическое задание.
+        </p>
+
+        <a href="#">
+          Открыть инструмент →
+        </a>
+      </article>
+
+      <article class="tool">
+        <div class="number">02</div>
+
+        <h2>Гримуар драматурга</h2>
+
+        <p>
+          Библиография по драматургии, сценарному мастерству,
+          нарративному дизайну, журналистике, рекламе
+          и смежным дисциплинам.
+        </p>
+
+        <a href="#">
+          Открыть гримуар →
+        </a>
+      </article>
+
+    </section>
+
+  </main>
+
+</body>
+</html>
