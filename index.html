@@ -4,258 +4,698 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>DIVINE TRAGEDY — Narrative Designer. Writer. Tragedian.</title>
+  <title>(Не)литературно — образовательная экосистема для сценаристов</title>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
-
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    body {
-      background: #080808;
-      color: #e8e1d5;
-      font-family: 'Manrope', sans-serif;
-      min-height: 100vh;
+    :root {
+      --paper: #e8dfc8;
+      --paper-light: #f1ead8;
+      --ink: #211d16;
+      --gold: #a47b32;
+      --gold-dark: #765820;
+      --muted: #756d5d;
+      --line: #b9ad91;
     }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* NAVIGATION */
+
+    .nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 28px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 18px;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-dark);
+    }
+
+    /* HERO */
 
     .hero {
       min-height: 100vh;
+      padding: 150px 8% 100px;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 40px 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-inner {
+      max-width: 950px;
     }
 
     .eyebrow {
-      font-size: 13px;
-      letter-spacing: 0.35em;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
       text-transform: uppercase;
-      color: #8d877e;
-      margin-bottom: 25px;
+      letter-spacing: 0.3em;
+      color: var(--gold-dark);
+      margin-bottom: 28px;
     }
 
     h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(64px, 12vw, 150px);
-      font-weight: 600;
+      font-size: clamp(64px, 11vw, 150px);
       line-height: 0.85;
-      letter-spacing: 0.03em;
-      color: #eee8dc;
+      font-weight: normal;
+      letter-spacing: -0.04em;
     }
 
-    .line {
-      width: 80px;
-      height: 1px;
-      background: #8d877e;
-      margin: 35px auto;
+    .hero-line {
+      width: 100px;
+      height: 2px;
+      background: var(--gold);
+      margin: 45px auto;
     }
 
-    .subtitle {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(24px, 4vw, 42px);
-      font-style: italic;
-      color: #b8b0a4;
+    .hero-subtitle {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: clamp(22px, 3vw, 34px);
+      line-height: 1.25;
     }
 
-    .manifesto {
-      margin-top: 50px;
-      max-width: 620px;
-      color: #77716a;
-      font-size: 14px;
-      line-height: 1.8;
-      letter-spacing: 0.03em;
+    .hero-text {
+      max-width: 650px;
+      margin: 30px auto 0;
+      color: var(--muted);
+      font-size: 16px;
     }
 
-    .enter {
-      margin-top: 55px;
-      padding: 14px 30px;
-      border: 1px solid #6f6961;
-      color: #e8e1d5;
+    .hero-button {
+      display: inline-block;
+      margin-top: 45px;
+      padding: 14px 28px;
+      border: 1px solid var(--gold-dark);
       text-decoration: none;
-      font-size: 12px;
-      letter-spacing: 0.2em;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
       text-transform: uppercase;
+      letter-spacing: 0.16em;
       transition: 0.3s ease;
     }
 
-    .enter:hover {
-      background: #e8e1d5;
-      color: #080808;
+    .hero-button:hover {
+      background: var(--ink);
+      color: var(--paper);
     }
-  .main-nav {
-  position: absolute;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 28px;
-  z-index: 10;
-}
 
-.main-nav a {
-  color: #8d877e;
-  text-decoration: none;
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  transition: 0.3s ease;
-}
+    /* GENERAL SECTIONS */
 
-.main-nav a:hover {
-  color: #e8e1d5;
-}
-  .featured {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 120px 30px;
-}
+    section {
+      padding: 110px 8%;
+    }
 
-.section-label {
-  color: #8d877e;
-  font-size: 11px;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
+    .section-inner {
+      max-width: 1150px;
+      margin: 0 auto;
+    }
 
-.featured h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(48px, 7vw, 80px);
-  font-weight: 500;
-  margin-bottom: 50px;
-  color: #eee8dc;
-}
+    .section-number {
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--gold-dark);
+      margin-bottom: 18px;
+    }
 
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
+    h2 {
+      font-size: clamp(45px, 7vw, 80px);
+      font-weight: normal;
+      line-height: 0.95;
+      margin-bottom: 35px;
+    }
 
-.project-card {
-  display: block;
-  padding: 35px 30px;
-  min-height: 280px;
-  border: 1px solid #292929;
-  color: #e8e1d5;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
+    .section-intro {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 60px;
+    }
 
-.project-card:hover {
-  border-color: #77716a;
-  transform: translateY(-5px);
-}
+    /* MISSION */
 
-.project-card span {
-  display: block;
-  color: #77716a;
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  margin-bottom: 35px;
-}
+    .mission {
+      background: var(--paper-light);
+    }
 
-.project-card h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 36px;
-  font-weight: 500;
-  margin-bottom: 20px;
-}
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: start;
+    }
 
-.project-card p {
-  color: #8d877e;
-  font-size: 13px;
-  line-height: 1.8;
-}
+    .mission-text {
+      font-size: 22px;
+      line-height: 1.55;
+    }
 
-@media (max-width: 800px) {
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
+    .principles {
+      border-top: 1px solid var(--line);
+    }
 
-  .featured {
-    padding: 80px 20px;
-  }
-}
+    .principle {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 18px;
+    }
+
+    .principle strong {
+      color: var(--gold-dark);
+      margin-right: 8px;
+    }
+
+    /* MENTORS */
+
+    .mentors {
+      background: var(--paper);
+    }
+
+    .mentor-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .mentor-card {
+      border: 1px solid var(--line);
+      padding: 40px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .mentor-card:hover {
+      border-color: var(--gold-dark);
+      transform: translateY(-4px);
+    }
+
+    .mentor-role {
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gold-dark);
+      margin-bottom: 35px;
+    }
+
+    .mentor-card h3 {
+      font-size: 42px;
+      font-weight: normal;
+      margin-bottom: 18px;
+    }
+
+    .mentor-card p {
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .mentor-link {
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--gold-dark);
+    }
+
+    /* TOOLS */
+
+    .tools {
+      background: var(--ink);
+      color: var(--paper-light);
+    }
+
+    .tools .section-number {
+      color: #c39b52;
+    }
+
+    .tools .section-intro {
+      color: #b4aa96;
+    }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .tool-card {
+      border: 1px solid #514936;
+      padding: 35px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .tool-card:hover {
+      border-color: #c39b52;
+    }
+
+    .tool-card h3 {
+      font-size: 32px;
+      font-weight: normal;
+      margin-bottom: 15px;
+    }
+
+    .tool-card p {
+      color: #aaa08b;
+    }
+
+    /* REVIEWS */
+
+    .reviews {
+      background: var(--paper-light);
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .review {
+      padding: 30px;
+      border-top: 2px solid var(--gold);
+    }
+
+    .review p {
+      font-size: 17px;
+      font-style: italic;
+      margin-bottom: 25px;
+    }
+
+    .review-author {
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 70px 8%;
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .footer-inner {
+      max-width: 1150px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .footer-title {
+      font-size: 28px;
+    }
+
+    .footer-text {
+      max-width: 450px;
+      color: #aaa08b;
+      margin-top: 10px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .footer-links a {
+      color: var(--paper);
+      text-decoration: none;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+      .nav {
+        position: relative;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .hero {
+        padding-top: 100px;
+      }
+
+      .mission-grid,
+      .mentor-grid,
+      .tool-grid,
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 80px 20px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <nav class="main-nav">
-    <a href="projects.html">Проекты</a>
-    <a href="methodology.html">Методология</a>
-    <a href="tools.html">Инструменты</a>
-    <a href="content.html">Контент</a>
-    <a href="about.html">Обо мне</a>
+  <nav class="nav">
+    <a href="#" class="logo">(Не)литературно</a>
+
+    <div class="nav-links">
+      <a href="#mission">О проекте</a>
+      <a href="#mentors">Менторы</a>
+      <a href="#tools">Инструменты</a>
+      <a href="#reviews">Отзывы</a>
+    </div>
   </nav>
 
-  <main class="hero">
 
-    <div class="eyebrow">
-      Divine Tragedy
-    </div>
+  <main>
 
-    <h1>TRAGEDY</h1>
+    <section class="hero">
 
-    <div class="line"></div>
+      <div class="hero-inner">
 
-    <div class="subtitle">
-      Narrative Designer. Writer. Tragedian.
-    </div>
+        <div class="eyebrow">
+          Образовательная экосистема для сценаристов
+        </div>
 
-    <p class="manifesto">
-      Истории, в которых структура имеет значение.<br>
-      Персонажи имеют цену. А последствия — память.
-    </p>
+        <h1>(Не)<br>литературно</h1>
 
-   <a href="projects.html" class="enter">
-  Enter the tragedy
-</a>
+        <div class="hero-line"></div>
 
-  </main>
-    <section class="featured">
-      <div class="section-label">Избранное</div>
+        <div class="hero-subtitle">
+          Учимся писать истории.<br>
+          Учимся понимать, почему они работают.
+        </div>
 
-      <h2>Проекты.</h2>
+        <p class="hero-text">
+          Индивидуальное наставничество, инструменты для практики
+          и среда для тех, кто хочет заниматься сценарным мастерством
+          всерьёз.
+        </p>
 
-      <div class="project-grid">
-
-        <a href="projects.html" class="project-card">
-          <span>Роман · Dark Fantasy · Трагедия</span>
-          <h3>Новая жизнь</h3>
-          <p>
-            Пятичастная трагедия о судьбе, власти, свободе
-            и попытке человека изменить историю.
-          </p>
-        </a>
-
-        <a href="projects.html" class="project-card">
-          <span>RPG · Narrative Design</span>
-          <h3>Коллапс</h3>
-          <p>
-            Нелинейная RPG с ансамблем персонажей,
-            интерактивной драматургией и последствиями выбора.
-          </p>
-        </a>
-
-        <a href="projects.html" class="project-card">
-          <span>Mobile · Satire · Clicker</span>
-          <h3>Excremental</h3>
-          <p>
-            Казуальная сатира на корпоративную жизнь
-            игровой индустрии. Карьерный рост начинается с говна.
-          </p>
+        <a href="#mentors" class="hero-button">
+          Выбрать ментора
         </a>
 
       </div>
+
     </section>
+
+
+    <section class="mission" id="mission">
+
+      <div class="section-inner">
+
+        <div class="section-number">I — Зачем мы здесь</div>
+
+        <h2>Сценарное<br>мастерство.</h2>
+
+        <div class="mission-grid">
+
+          <p class="mission-text">
+            (Не)литературно — это проект о системном обучении
+            сценарному мастерству.
+            <br><br>
+            Мы хотим построить экосистему, в которой сценарист
+            может получить знания, практику, наставника и постепенно
+            вырасти от первых текстов до профессиональной работы.
+          </p>
+
+          <div class="principles">
+
+            <div class="principle">
+              <strong>01</strong>
+              Не учим писать «правильно».
+            </div>
+
+            <div class="principle">
+              <strong>02</strong>
+              Разбираем, почему история работает.
+            </div>
+
+            <div class="principle">
+              <strong>03</strong>
+              Много практики, мало инфобизнеса.
+            </div>
+
+            <div class="principle">
+              <strong>04</strong>
+              В будущем — собственное издательство.
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="mentors" id="mentors">
+
+      <div class="section-inner">
+
+        <div class="section-number">II — Наставники</div>
+
+        <h2>Выберите<br>своего ментора.</h2>
+
+        <p class="section-intro">
+          Два автора, два профессиональных опыта и два разных
+          взгляда на работу с историей.
+        </p>
+
+        <div class="mentor-grid">
+
+          <a href="#" class="mentor-card">
+
+            <div class="mentor-role">
+              Narrative Designer · Writer
+            </div>
+
+            <h3>Ваше имя</h3>
+
+            <p>
+              Опыт в игровой драматургии, нарративном дизайне,
+              разработке персонажей и интерактивных историй.
+            </p>
+
+            <div class="mentor-link">
+              Профиль → 
+            </div>
+
+          </a>
+
+
+          <a href="#" class="mentor-card">
+
+            <div class="mentor-role">
+              Writer · Screenwriter
+            </div>
+
+            <h3>Имя соавтора</h3>
+
+            <p>
+              Здесь будет короткое описание специализации,
+              опыта и направления работы второго ментора.
+            </p>
+
+            <div class="mentor-link">
+              Профиль →
+            </div>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="tools" id="tools">
+
+      <div class="section-inner">
+
+        <div class="section-number">III — Практика</div>
+
+        <h2>Инструменты.</h2>
+
+        <p class="section-intro">
+          Не только читать о драматургии — ещё и тренироваться.
+          Бесплатные инструменты проекта помогают превращать
+          теорию в навык.
+        </p>
+
+        <div class="tool-grid">
+
+          <a href="#" class="tool-card">
+            <h3>Профориентационный тест</h3>
+            <p>
+              Разберись, какое направление сценарной работы
+              подходит тебе и с чего начать развитие.
+            </p>
+          </a>
+
+          <a href="#" class="tool-card">
+            <h3>Тренажёр драматурга</h3>
+            <p>
+              Получи случайный жанр, сеттинг и структуру —
+              и попробуй заставить эту комбинацию работать.
+            </p>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="reviews" id="reviews">
+
+      <div class="section-inner">
+
+        <div class="section-number">IV — Голоса учеников</div>
+
+        <h2>Отзывы.</h2>
+
+        <p class="section-intro">
+          Здесь будут реальные отзывы людей, которые прошли
+          обучение и работали с нами.
+        </p>
+
+        <div class="review-grid">
+
+          <div class="review">
+            <p>
+              «Здесь появится первый отзыв ученика.»
+            </p>
+
+            <div class="review-author">
+              Имя · курс / направление
+            </div>
+          </div>
+
+          <div class="review">
+            <p>
+              «Здесь появится второй отзыв ученика.»
+            </p>
+
+            <div class="review-author">
+              Имя · курс / направление
+            </div>
+          </div>
+
+          <div class="review">
+            <p>
+              «Здесь появится третий отзыв ученика.»
+            </p>
+
+            <div class="review-author">
+              Имя · курс / направление
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div>
+        <div class="footer-title">(Не)литературно</div>
+
+        <p class="footer-text">
+          Образовательная экосистема для сценаристов.
+          От первых текстов — к профессиональной работе.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#">YouTube</a>
+        <a href="#">Telegram</a>
+        <a href="#">Boosty</a>
+      </div>
+
+    </div>
+
+  </footer>
+
 </body>
 </html>
