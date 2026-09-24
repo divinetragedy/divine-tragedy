@@ -14,22 +14,23 @@
     }
 
     :root {
-      --ochre: #b88a32;
-      --gold: #c39a43;
-      --bronze: #7b5a27;
-      --marble: #d8c9a7;
-      --marble-dark: #b9a57c;
-      --ink: #17130e;
-      --muted: #756548;
-      --line: #806a3e;
-    }
+  --black: #080808;
+  --black-soft: #11100f;
+  --gold: #b08a45;
+  --gold-light: #d0ad68;
+  --gray: #8d877e;
+  --gray-dark: #393631;
+  --white: #e8e1d5;
+}
 
     body {
-      background: var(--marble);
-      color: var(--ink);
-      font-family: Georgia, 'Times New Roman', serif;
-      line-height: 1.6;
-    }
+  background:
+    radial-gradient(circle at 50% 0%, rgba(176, 138, 69, 0.08), transparent 35%),
+    var(--black);
+  color: var(--white);
+  font-family: Georgia, 'Times New Roman', serif;
+  line-height: 1.6;
+}
 
     .page {
       max-width: 1100px;
