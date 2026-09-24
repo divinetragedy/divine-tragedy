@@ -14,25 +14,36 @@
     }
 
     :root {
-      --paper: #e8dfc8;
-      --paper-light: #f1ead8;
-      --ink: #211d16;
-      --gold: #a47b32;
-      --gold-dark: #765820;
-      --muted: #756d5d;
-      --line: #b9ad91;
-    }
+  --ochre: #b88a32;
+  --ochre-light: #d2ad5c;
+  --bronze: #7b5a27;
+  --terracotta: #7d4935;
+
+  --marble: #d8c9a7;
+  --marble-dark: #b9a57c;
+
+  --ink: #17130e;
+  --ink-soft: #272017;
+
+  --muted: #756548;
+  --line: #806a3e;
+
+  --gold: #c39a43;
+}
 
     html {
       scroll-behavior: smooth;
     }
 
-    body {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: Georgia, 'Times New Roman', serif;
-      line-height: 1.6;
-    }
+   body {
+  background:
+    radial-gradient(circle at 20% 10%, rgba(184, 138, 50, 0.12), transparent 30%),
+    radial-gradient(circle at 80% 80%, rgba(125, 73, 53, 0.08), transparent 35%),
+    var(--marble);
+  color: var(--ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  line-height: 1.6;
+}
 
     a {
       color: inherit;
