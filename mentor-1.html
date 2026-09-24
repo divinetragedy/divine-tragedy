@@ -54,19 +54,33 @@
     }
 
     .profile {
-      display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 80px;
-      align-items: start;
-    }
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 90px;
+  align-items: start;
+  position: relative;
+}
+
+.profile::before {
+  content: "TRAGEDIAN";
+  position: absolute;
+  top: -35px;
+  right: 0;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.35em;
+  color: var(--gray-dark);
+}
 
     .avatar {
-      width: 260px;
-      height: 260px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid var(--gold);
-    }
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  display: block;
+  filter: saturate(0.8);
+}
 
     .role {
       font-family: Arial, sans-serif;
@@ -77,13 +91,13 @@
       margin-bottom: 20px;
     }
 
-    h1 {
-      font-size: clamp(55px, 8vw, 95px);
-      line-height: 0.9;
-      font-weight: normal;
-      margin-bottom: 35px;
-    }
-
+   h1 {
+  font-size: clamp(55px, 8vw, 95px);
+  line-height: 0.82;
+  font-weight: normal;
+  letter-spacing: -0.04em;
+  margin-bottom: 35px;
+}
     .intro {
       font-size: 21px;
       line-height: 1.55;
